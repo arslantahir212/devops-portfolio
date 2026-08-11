@@ -3,6 +3,8 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = "arslanlinux/devops-portfolio"
+        CONTAINER_NAME = "devops-portfolio"
+        HOST_PORT = "8081"
     }
 
     stages {
@@ -30,12 +32,14 @@ pipeline {
             steps {
                 withCredentials([
                     usernamePassword(
-                        credentialsId: 'dockerhub-credentials'
+                        credentialsId: 'dockerhub-credentials',
                         usernameVariable: 'DOCKER_USERNAME',
                         passwordVariable: 'DOCKER_PASSWORD'
                     )
                 ]) {
-                    sh 'echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin'
+                    sh '''
+                        echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+                    '''
                 }
             }
         }
@@ -49,12 +53,13 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh '''
-                    docker stop devops-portfolio || true
-                    docker rm devops-portfolio || true
+                    docker stop ${CONTAINER_NAME} || true
+                    docker rm ${CONTAINER_NAME} || true
+
                     docker run -d \
-                      --name devops-portfolio \
-                      -p 8081:80 \
-                      ${DOCKER_IMAGE}:latest
+                        --name ${CONTAINER_NAME} \
+                        -p ${HOST_PORT}:80 \
+                        ${DOCKER_IMAGE}:latest
                 '''
             }
         }
@@ -62,7 +67,7 @@ pipeline {
 
     post {
         success {
-            echo 'DevOps Portfolio CI/CD completed successfully!'
+            echo 'CI/CD pipeline completed successfully!'
         }
 
         failure {
