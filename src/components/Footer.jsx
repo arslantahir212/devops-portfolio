@@ -86,7 +86,7 @@ function Footer() {
           </p>
 
           <p className="text-gray-500 mt-2">
-            Built with React • Tailwind CSS • Docker • Jenkins • Kubernetes • AWS
+            Built with React • Tailwind CSS • Docker • Jenkins • Kubernetes • AWS • CI/CD
           </p>
 
         </div>
