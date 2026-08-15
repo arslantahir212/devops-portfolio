@@ -6,7 +6,7 @@ import mitDegree from "../assets/images/mit-degree.jpg";
 export const portfolio = {
   personal: {
     greeting: "👋 Hello, I'm",
-    name: "Muhammd Arslan Tahir",
+    name: "Muhammad Arslan Tahir",
     title: "DevOps Engineer",
 
     tagline:
