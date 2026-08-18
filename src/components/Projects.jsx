@@ -58,14 +58,16 @@ const { projects } = portfolio;
                     GitHub
                   </a>
 
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="border border-gray-600 hover:border-blue-500 px-6 py-3 rounded-xl transition"
-                  >
-                    Live Demo
-                  </a>
+                   {project.demo && project.demo !== "#" && (
+  <a
+    href={project.demo}
+    target="_blank"
+    rel="noreferrer"
+    className="border border-gray-600 hover:border-blue-500 px-6 py-3 rounded-xl transition"
+  >
+    Live Demo
+  </a>
+)}
                 </div>
               </div>
             </div>

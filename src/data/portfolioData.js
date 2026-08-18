@@ -11,12 +11,12 @@ export const portfolio = {
 
     tagline:
       "I build cloud infrastructure, automate deployments, and create CI/CD pipelines using AWS, Docker, Kubernetes, Jenkins, Terraform, and Linux.",
+      
+      about: [
+  "I'm a DevOps Engineer focused on building, automating, and deploying modern applications and cloud infrastructure. I have hands-on experience with AWS, Docker, Jenkins, Kubernetes, Terraform, Linux, Git, and CI/CD.",
 
-    about: [
-      "I'm an aspiring DevOps Engineer with hands-on experience in AWS, Docker, Kubernetes, Jenkins, Terraform, Linux, Git, and CI/CD automation.",
-
-      "I enjoy building scalable infrastructure, automating deployments, and solving real-world DevOps challenges through practical projects. I'm continuously improving my skills by working on cloud-native technologies and automation.",
-    ],
+  "I enjoy automating deployment workflows, troubleshooting infrastructure and deployment issues, and solving real-world DevOps challenges. Through practical projects, I've worked with containerization, CI/CD pipelines, cloud infrastructure, application deployments, and debugging production-style issues while continuously expanding my DevOps skills.",
+],
 
     resume: "/Arslan-Tahir-CV.pdf",
   },
